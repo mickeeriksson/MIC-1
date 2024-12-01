@@ -1,0 +1,11 @@
+ brew install python-tk
+
+
+
+python3 -m venv /Users/micke/.local/pyvenv
+source /Users/micke/.local/pyvenv/bin/activate
+
+# prompt now starts with (pyenv)
+
+python3 -m pip install pyserial
+python3 -m pip install pysimplegui

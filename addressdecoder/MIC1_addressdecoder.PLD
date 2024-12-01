@@ -1,0 +1,61 @@
+Name     MIC1 Address Decoder;
+PartNo   00 ;
+Date     2024-12-01 ;
+Revision 01 ;
+Designer Mikael Eriksson ;
+Company  TL ;
+Assembly None ;
+Location  ;
+Device   ATF22V10C ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK                     ; /*                                 */ 
+PIN 2   = RWB                     ; /*                                 */ 
+PIN 3   = A15                     ; /*                                 */ 
+PIN 4   = A14                     ; /*                                 */ 
+PIN 5   = A13                     ; /*                                 */ 
+PIN 6   = A12                     ; /*                                 */ 
+PIN 7   = A11                     ; /*                                 */ 
+PIN 8   = A10                     ; /*                                 */ 
+PIN 9   = A9                      ; /*                                 */ 
+PIN 10  = A8                      ; /*                                 */ 
+PIN 11  = A7                      ; /*                                 */ 
+/* 12 = GND */
+PIN 13  = A6                      ; /*                                 */ 
+PIN 14  = A5                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+/* 24 = VCC */
+PIN 23  = WE		              ; /*                                 */ 
+PIN 22  = OE                      ; /*                                 */ 
+PIN 21  = CSROM                   ; /*                                 */ 
+PIN 20  = CSRAM                   ; /*                                 */ 
+PIN 19  = CSIO1                   ; /*                                 */ 
+PIN 18  = CSIO2                   ; /*                                 */ 
+PIN 17  = CSIO3                   ; /*                                 */ 
+PIN 16  = CSIO4                   ; /*                                 */ 
+PIN 15  = CSIO5                   ; /*                                 */ 
+
+
+FIELD Address = [A15..A00];
+
+
+RAM       = Address:[0000..7FFF];
+IO_SHADOW = Address:[7F00..7FFF];
+ROM       = Address:[8000..FFFF];
+IO5	   = Address:[7FE0..7FFF];
+IO4	   = Address:[7FC0..7FDF];
+IO3	   = Address:[7FA0..7FBF];
+IO2	   = Address:[7F80..7F9F];
+IO1	   = Address:[7F60..7F7F];
+
+
+!WE       = CLK & !RWB;
+!OE       = CLK & RWB;
+!CSRAM    = RAM & !IO_SHADOW;
+!CSROM    = ROM;
+CSIO1     = IO1;
+CSIO2     = IO2;
+CSIO3     = IO3;
+CSIO4     = IO4;
+CSIO5     = IO5;
