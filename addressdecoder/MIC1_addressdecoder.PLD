@@ -34,7 +34,7 @@ PIN 19  = CSIO1                   ; /*                                 */
 PIN 18  = CSIO2                   ; /*                                 */ 
 PIN 17  = CSIO3                   ; /*                                 */ 
 PIN 16  = CSIO4                   ; /*                                 */ 
-PIN 15  = CSIO5                   ; /*                                 */ 
+PIN 15  = RWB_OUT                 ; /* was CSIO5, reused to put RWB on busboard instead od CSIO5  */
 
 
 FIELD Address = [A15..A00];
@@ -58,4 +58,4 @@ CSIO1     = IO1;
 CSIO2     = IO2;
 CSIO3     = IO3;
 CSIO4     = IO4;
-CSIO5     = IO5;
+RWB_OUT   = RWB;
