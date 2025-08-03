@@ -6,7 +6,9 @@ Designer Mikael Eriksson ;
 Company  TL ;
 Assembly None ;
 Location  ;
-Device   ATF22V10C ;
+/*Device   ATF22LV10C wont work in WinCupl use g22V10 instead */
+Device   g22V10 ; 
+
 
 /* *************** INPUT PINS *********************/
 PIN 1   = CLK                     ; /*                                 */ 
